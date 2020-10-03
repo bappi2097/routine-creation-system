@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ImportExcelController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/routine', [ImportExcelController::class, 'create'])->name('create');
+Route::post('/routine', [ImportExcelController::class, 'store'])->name('store');
