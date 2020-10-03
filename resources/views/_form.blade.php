@@ -31,6 +31,7 @@
             </div>
         </form>
     </div>
+    <form action="{{route('show')}}" method="get">
     <table class="table-auto mx-auto bg-white">
         <thead>
             <tr>
@@ -46,8 +47,9 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($routines as $routine)
             <tr>
-                <td class="border px-4 py-2">Semester</td>
+                <td class="border px-4 py-2">{{$routines->semester}}</td>
                 <td class="border px-4 py-2">Section</td>
                 <td class="border px-4 py-2">CRE</td>
                 <td class="border px-4 py-2">Course Code</td>
@@ -57,8 +59,10 @@
                 <td class="border px-4 py-2">C</td>
                 <td class="border px-4 py-2">D</td>
             </tr>
+            @endforeach
         </tbody>
     </table>
+    </form>
 </body>
 
 </html>
