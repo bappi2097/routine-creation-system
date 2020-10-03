@@ -2,19 +2,22 @@
     {
         "_id": "5f783b33e3dc5eaf0ebc076b",
         "semester": "T-1, L-1 (33th)",
-        "section": "A",
-        "student": "40",
+        "section": ["A", "B"],
+        "number_of_student": "40",
         "courses": [
             {
+                "color": "#ffffff",
                 "credit": "3",
                 "code": "SE111",
                 "name": "Computer Fundamentals (A)",
-                "teacher": [
+                "teachers": [
                     {
+                        "color": "#ffffff",
                         "initial": "KBB",
                         "section": "A"
                     },
                     {
+                        "color": "#ffffff",
                         "initial": "MSI",
                         "section": "B"
                     }
@@ -24,12 +27,14 @@
                 "credit": "1",
                 "code": "SE112",
                 "name": "Computer Fundamentals Lab (A)",
-                "teacher": [
+                "teachers": [
                     {
+                        "color": "#ffffff",
                         "initial": "KBB",
                         "section": "A"
                     },
                     {
+                        "color": "#ffffff",
                         "initial": "MSI",
                         "section": "B"
                     }
