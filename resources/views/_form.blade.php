@@ -9,7 +9,7 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-200">
+<body class="bg-gray-200 align-baseline">
     <div class="w-1/2 m-auto my-12 bg-white p-10 rounded-md">
         <form method="POST" action="{{route('store')}}" enctype="multipart/form-data">
             @csrf
@@ -31,7 +31,8 @@
             </div>
         </form>
     </div>
-    <table class="table-auto border border-gray-300 bg-white mx-4">
+    <div class="w-full m-auto my-12 mt-lg-auto p-40 rounded-md">
+    <table class="table-auto border border-gray-400 bg-white mx-4">
         <thead>
             <tr>
                 <th class="border border-gray-300 px-4 py-2">SL.</th>
@@ -110,6 +111,7 @@
             @endforeach
         </tbody>
     </table>
+    </div>
 </body>
 
 </html>
