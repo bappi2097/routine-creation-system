@@ -11,9 +11,9 @@ class Routine extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function showroutine()
-    {
-        $routines = App\Models\Routine::all();
-        return $routines;
-    }
+    // public function routines()
+    // {
+    //     $routines = App\Models\Routine::all();
+    //     return $routines;
+    // }
 }

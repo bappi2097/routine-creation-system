@@ -31,7 +31,7 @@
             </div>
         </form>
     </div>
-    <form action="{{route('show')}}" method="get">
+    <form action="{{route('create')}}" method="get">
     <table class="table-auto mx-auto bg-white">
         <thead>
             <tr>
@@ -40,26 +40,21 @@
                 <th class="px-4 py-2">CRE</th>
                 <th class="px-4 py-2">Course Code</th>
                 <th class="px-4 py-2">Course Name</th>
-                <th class="px-4 py-2">A</th>
-                <th class="px-4 py-2">B</th>
-                <th class="px-4 py-2">C</th>
-                <th class="px-4 py-2">D</th>
+    
             </tr>
         </thead>
         <tbody>
-            @foreach($routines as $routine)
+        @foreach($routines as $routine)
             <tr>
-                <td class="border px-4 py-2">{{$routines->semester}}</td>
-                <td class="border px-4 py-2">Section</td>
-                <td class="border px-4 py-2">CRE</td>
-                <td class="border px-4 py-2">Course Code</td>
-                <td class="border px-4 py-2">Course Name</td>
-                <td class="border px-4 py-2">A</td>
-                <td class="border px-4 py-2">B</td>
-                <td class="border px-4 py-2">C</td>
-                <td class="border px-4 py-2">D</td>
+                <td class="border px-4 py-2">{{ $routine->semester}}</td>
+                <td class="border px-4 py-2">{{ $routine->semester}}</td>
+                @foreach($routine->courses as $course)
+                    <td class="border px-4 py-2">{{$course['credit']}}</td>
+                    <td class="border px-4 py-2">{{$course['code']}}</td>
+                    <td class="border px-4 py-2">{{$course['name']}}</td>
+                @endforeach
             </tr>
-            @endforeach
+        @endforeach 
         </tbody>
     </table>
     </form>
