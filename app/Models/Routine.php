@@ -10,10 +10,4 @@ class Routine extends Model
 {
     use HasFactory;
     protected $guarded = [];
-
-    // public function routines()
-    // {
-    //     $routines = App\Models\Routine::all();
-    //     return $routines;
-    // }
 }

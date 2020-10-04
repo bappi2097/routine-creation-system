@@ -10,7 +10,6 @@ class ImportExcelController extends Controller
     public function create()
     {
         $routines = Routine::all();
-        // dd($routines);
         return view('_form', compact('routines'));
     }
     public function store(Request $request)
@@ -81,22 +80,16 @@ class ImportExcelController extends Controller
                 $datas[$cnt - 1]['courses'][] = $data;
             }
         }
-        foreach($datas as $data)
-        {
+        Routine::truncate();
+        foreach ($datas as $data) {
             Routine::create([
-                'semester'=>$data['semester'],
-                'section'=>$data['sections'],
-                'number_of_student'=>$data['number_of_student'],
-                'courses'=> $data['courses'],
+                'semester' => $data['semester'],
+                'sections' => $data['sections'],
+                'number_of_student' => $data['number_of_student'],
+                'courses' => $data['courses'],
             ]);
         }
-        // return $datas;
-        return redirect()->back();
+        return redirect()->route('create');
     }
-    // public function show()
-    // {
-    //     $routines = Routine::all();
-    //     dd($routines);
-    //     return view('_form', compact('routines'));
-    // }
+
 }

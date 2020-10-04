@@ -20,5 +20,4 @@ Route::get('/', function () {
 
 Route::get('/routine', [ImportExcelController::class, 'create'])->name('create');
 Route::post('/routine', [ImportExcelController::class, 'store'])->name('store');
-// Route::get('/routine', [ImportExcelController::class, 'show'])->name('show');
 
