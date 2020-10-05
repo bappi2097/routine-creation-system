@@ -26,28 +26,28 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/routine" onclick="day()">
+                    <a href="/day" onclick="day()">
                         <span class="rect"></span>
                         <span class="circle"></span>
                         Day
                     </a>
                 </li>
                 <li>
-                    <a href="#education">
+                    <a href="/slot">
                         <span class="rect"></span>
                         <span class="circle"></span>
                         Slot
                     </a>
                 </li>
                 <li>
-                    <a href="#cirtification">
+                    <a href="/room">
                         <span class="rect"></span>
                         <span class="circle"></span>
                         Room
                     </a>
                 </li>
                 <li>
-                    <a href="#abilities">
+                    <a href="/teacher">
                         <span class="rect"></span>
                         <span class="circle"></span>
                         Teacher
