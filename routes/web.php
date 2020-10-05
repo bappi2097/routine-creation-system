@@ -24,13 +24,13 @@ Route::get('/', function () {
 });
 
 Route::get('/day', [DayController::class, 'index']);
-Route::get('/day', [DayController::class, 'store'])->name('dayStore');
+Route::post('/day', [DayController::class, 'store'])->name('dayStore');
 Route::get('/room', [RoomController::class, 'index']);
-Route::get('/room', [RoomController::class, 'store'])->name('roomStroe');
+Route::post('/room', [RoomController::class, 'store'])->name('roomStore');
 Route::get('/slot', [SlotController::class, 'index']);
-Route::get('/slot', [SlotController::class, 'store'])->name('slotStroe');
+Route::post('/slot', [SlotController::class, 'store'])->name('slotStore');
 Route::get('/teacher', [TeacherController::class, 'index']);
-Route::get('/teacher', [teacherController::class, 'store'])->name('teacherStore');
+Route::post('/teacher', [teacherController::class, 'store'])->name('teacherStore');
 
 Route::get('/routine', [ImportExcelController::class, 'create'])->name('create');
 Route::post('/routine', [ImportExcelController::class, 'store'])->name('store');

@@ -15,7 +15,7 @@ class CreateSlotsTable extends Migration
     {
         Schema::create('slots', function (Blueprint $table) {
             $table->id();
-            $table->string('slote_type');
+            $table->string('slot_type');
             $table->string('time');
             $table->timestamps();
         });

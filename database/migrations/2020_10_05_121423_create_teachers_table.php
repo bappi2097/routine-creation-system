@@ -15,7 +15,7 @@ class CreateTeachersTable extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
-            $table->string('teacher name');
+            $table->string('teacher_name');
             $table->string('initial');
             $table->text('off_days');
             $table->timestamps();
