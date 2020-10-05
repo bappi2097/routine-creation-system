@@ -22,7 +22,7 @@
   .sidebar-navigation .logo a {
     text-decoration: none;
     color: #fff;
-    font-size: auto;
+    font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -65,7 +65,7 @@
     color: #fff;
     margin-top: 5px;
     text-decoration: none!important;
-    font-size: 15px;
+    font-size: 20git px;
     letter-spacing: 0.5px;
     text-transform: capitalize;
   }
