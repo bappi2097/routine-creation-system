@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use Illuminate\Database\Eloquent\Model;
 use Jenssegers\Mongodb\Eloquent\Model;
 
-class Routine extends Model
+
+class Color extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function color()
+    public function routine()
     {
-        return $this->hasOne(Color::class, '_id', 'color_id');
+        return $this->belongsTo(Color::class);
     }
 }

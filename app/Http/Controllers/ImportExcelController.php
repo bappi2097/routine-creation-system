@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Color;
 use App\Models\Routine;
 use Illuminate\Http\Request;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
@@ -81,9 +83,11 @@ class ImportExcelController extends Controller
             }
         }
         Routine::truncate();
-        foreach ($datas as $data) {
+        $color = Color::pluck('_id')->all();
+        foreach ($datas as $index => $data) {
             Routine::create([
                 'semester' => $data['semester'],
+                'color_id' => $color[$index],
                 'sections' => $data['sections'],
                 'number_of_student' => $data['number_of_student'],
                 'courses' => $data['courses'],
@@ -91,5 +95,4 @@ class ImportExcelController extends Controller
         }
         return redirect()->route('create');
     }
-
 }
