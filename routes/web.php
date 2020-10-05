@@ -5,7 +5,6 @@ use App\Http\Controllers\DayController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\SlotController;
 use App\Http\Controllers\TeacherController;
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+auth()->login(App\Models\User::first());
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,6 +33,8 @@ Route::post('/slot', [SlotController::class, 'store'])->name('slotStore');
 Route::get('/teacher', [TeacherController::class, 'index']);
 Route::post('/teacher', [teacherController::class, 'store'])->name('teacherStore');
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/routine', [ImportExcelController::class, 'create'])->name('create');
 Route::post('/routine', [ImportExcelController::class, 'store'])->name('store');
-

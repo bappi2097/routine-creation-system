@@ -11,7 +11,7 @@
 </head>
 
 <body class="bg-gray-200 align-baseline">
-    
+
     <div class="sidebar-navigation hidde-sm hidden-xs">
         <div class="logo">
             <a href="/">Routine<em>Creation</em></a>
@@ -56,6 +56,7 @@
             </ul>
         </nav>
     </div>
-    
+
 </body>
+
 </html>
