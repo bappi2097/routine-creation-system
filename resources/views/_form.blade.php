@@ -1,4 +1,5 @@
-@include('_sidebar')
+@extends('layouts.app')
+@section('content')
 <div class="w-1/2 m-auto my-12 bg-white p-10 rounded-md page-content">
     <div class="container">
         <form method="POST" action="{{route('store')}}" enctype="multipart/form-data">
@@ -23,3 +24,4 @@
     </div>
 </div>
 @include('_routine')
+@endsection

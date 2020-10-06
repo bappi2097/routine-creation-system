@@ -9,11 +9,6 @@ use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 
 class ImportExcelController extends Controller
 {
-    public function create()
-    {
-        $routines = Routine::all();
-        return view('_form', compact('routines'));
-    }
     public function store(Request $request)
     {
         $reader = new Xlsx();

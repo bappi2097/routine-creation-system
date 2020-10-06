@@ -36,5 +36,4 @@ Route::post('/teacher', [teacherController::class, 'store'])->name('teacherStore
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/routine', [ImportExcelController::class, 'create'])->name('create');
 Route::post('/routine', [ImportExcelController::class, 'store'])->name('store');
