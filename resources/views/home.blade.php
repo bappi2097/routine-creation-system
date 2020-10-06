@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<div class="w-1/2 m-auto my-12 bg-white p-10 rounded-md page-content">
-    <div class="container">
+<div class="my-12 bg-white p-10 mr-4 rounded-md page-content">
+    <div class="">
         <form method="POST" action="{{route('store')}}" enctype="multipart/form-data">
             @csrf
             <div class="mb-6">

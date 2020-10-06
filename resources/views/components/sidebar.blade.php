@@ -1,12 +1,12 @@
 <div class="sidebar-navigation hidde-sm hidden-xs">
     <div class="logo">
-        <a href="/">Routine<em>Creation</em></a>
+        <a href="/home">Routine<em>Creation</em></a>
     </div>
     <nav>
         <ul>
             <h2 class="text-white text-xl">{{auth()->user()->name}}</h2>
             <li>
-                <a href="/">
+                <a href="/home">
                     <span class="rect"></span>
                     <span class="circle"></span>
                     Home

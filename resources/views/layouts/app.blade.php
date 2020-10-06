@@ -22,7 +22,7 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-gray-200">
     <div id="app">
         {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -75,12 +75,16 @@
         </div>
     </div>
     </nav> --}}
+    @auth
     <x-sidebar></x-sidebar>
-    <main class="py-4">
+    @endauth
+    <main>
+        <x-flash></x-flash>
         @yield('content')
     </main>
     </div>
-    <script src="{{asset('app.jss')}}"></script>
+    <script src="{{asset('app.js')}}"></script>
+    <script src="http://unpkg.com/turbolinks"></script>
 </body>
 
 </html>
