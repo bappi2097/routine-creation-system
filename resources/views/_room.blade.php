@@ -10,7 +10,7 @@
                 </label>
 
                 <input class="border border-gray-400 p-2 w-full" type="text" name="room_no" id="room_no"
-                    placeholder="Enter your name" required>
+                    placeholder="Enter Room No." required>
                 @error('room_no')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                 @enderror
@@ -27,14 +27,14 @@
             </div>
             <div class="mb-6">
                 <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="free_days">Free Days</label>
-                <select class="border border-gray-400 p-2 w-full" name="free_days[]" id="free_days" multiple required>
-                    <option class="py-1 border-b border-b-gray-300" value="Sataurday">Sataurday</option>
-                    <option class="py-1 border-b border-b-gray-300" value="Sunday">Sunday</option>
-                    <option class="py-1 border-b border-b-gray-300" value="Monday">Monday</option>
-                    <option class="py-1 border-b border-b-gray-300" value="Tuesday">Tuesday</option>
-                    <option class="py-1 border-b border-b-gray-300" value="Wednesday">Wednesday</option>
-                    <option class="py-1 border-b border-b-gray-300" value="Thrusday">Thrusday</option>
-                    <option class="py-1 border-b border-b-gray-300" value="Friday">Friday</option>
+                <select class="border border-gray-400 w-full" name="free_days[]" id="free_days" multiple required>
+                    <option class="py-2 px-4 border-b border-b-gray-300" value="Sataurday">Sataurday</option>
+                    <option class="py-2 px-4 border-b border-b-gray-300" value="Sunday">Sunday</option>
+                    <option class="py-2 px-4 border-b border-b-gray-300" value="Monday">Monday</option>
+                    <option class="py-2 px-4 border-b border-b-gray-300" value="Tuesday">Tuesday</option>
+                    <option class="py-2 px-4 border-b border-b-gray-300" value="Wednesday">Wednesday</option>
+                    <option class="py-2 px-4 border-b border-b-gray-300" value="Thrusday">Thrusday</option>
+                    <option class="py-2 px-4 border-b border-b-gray-300" value="Friday">Friday</option>
                 </select>
             </div>
             <div class="mb-6">
@@ -43,7 +43,7 @@
                 </label>
 
                 <input class="border border-gray-400 p-2 w-full" type="text" name="free_slot" id="free_slot"
-                    placeholder="Enter your name" required>
+                    placeholder="Enter Free SLot" required>
                 @error('free_slot')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                 @enderror

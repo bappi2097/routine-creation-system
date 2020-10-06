@@ -11,8 +11,8 @@ class Color extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function routine()
+    public function allocation()
     {
-        return $this->belongsTo(Color::class);
+        return $this->belongsTo(Allocation::class);
     }
 }

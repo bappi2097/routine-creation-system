@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="mt-12 container mx-auto flex justify-center">
-    <div class="px-16 py-6 bg-white rounded-lg border border-gray-300">
+<div class="container mx-auto flex justify-center">
+    <div class="mt-16 px-16 py-6 bg-white rounded-lg border border-gray-300">
         <div class="col-md-8">
             <div class="font-bold text-lg mb-4">{{ __('Register') }}</div>
 

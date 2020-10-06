@@ -24,16 +24,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/day', [DayController::class, 'index']);
-Route::post('/day', [DayController::class, 'store'])->name('dayStore');
-Route::get('/room', [RoomController::class, 'index']);
-Route::post('/room', [RoomController::class, 'store'])->name('roomStore');
-Route::get('/slot', [SlotController::class, 'index']);
-Route::post('/slot', [SlotController::class, 'store'])->name('slotStore');
-Route::get('/teacher', [TeacherController::class, 'index']);
-Route::post('/teacher', [teacherController::class, 'store'])->name('teacherStore');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/routine', [ImportExcelController::class, 'store'])->name('store');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::post('/allocation', [ImportExcelController::class, 'store'])->name('store');
+    Route::get('/day', [DayController::class, 'index']);
+    Route::post('/day', [DayController::class, 'store'])->name('dayStore');
+    Route::get('/room', [RoomController::class, 'index']);
+    Route::post('/room', [RoomController::class, 'store'])->name('roomStore');
+    Route::get('/slot', [SlotController::class, 'index']);
+    Route::post('/slot', [SlotController::class, 'store'])->name('slotStore');
+    Route::get('/teacher', [TeacherController::class, 'index']);
+    Route::post('/teacher', [teacherController::class, 'store'])->name('teacherStore');
+});

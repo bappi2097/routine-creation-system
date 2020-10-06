@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container m-auto mt-12 flex justify-center">
-    <div class="bg-white px-12 py-8 border border-gray-300 rounded-lg">
+<div class="container m-auto flex justify-center">
+    <div class="mt-16 bg-white px-12 py-8 border border-gray-300 rounded-lg">
         <div class="col-md-8">
             <div class="font-bold text-lg mb-4">{{ __('Login') }}</div>
             <form method="POST" action="{{ route('login') }}">

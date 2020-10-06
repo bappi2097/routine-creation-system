@@ -17,7 +17,7 @@
                 </label>
 
                 <input class="border border-gray-400 p-2 w-full" type="text" name="time" id="time"
-                    placeholder="Enter your name" required>
+                    placeholder="Enter Time" required>
                 @error('time')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                 @enderror

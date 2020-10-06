@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Routine;
+use App\Models\Allocation;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $routines = Routine::all();
+        $routines = Allocation::all();
         return view('home', compact('routines'));
     }
 }

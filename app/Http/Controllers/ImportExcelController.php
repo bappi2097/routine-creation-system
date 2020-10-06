@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Color;
-use App\Models\Routine;
+use App\Models\Allocation;
 use Illuminate\Http\Request;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 
@@ -77,10 +77,10 @@ class ImportExcelController extends Controller
                 $datas[$cnt - 1]['courses'][] = $data;
             }
         }
-        Routine::truncate();
+        Allocation::truncate();
         $color = Color::pluck('_id')->all();
         foreach ($datas as $index => $data) {
-            Routine::create([
+            Allocation::create([
                 'semester' => $data['semester'],
                 'color_id' => $color[$index],
                 'sections' => $data['sections'],
@@ -88,6 +88,6 @@ class ImportExcelController extends Controller
                 'courses' => $data['courses'],
             ]);
         }
-        return redirect()->route('create');
+        return redirect()->back()->with('success', "Allocation Successfully Uploaded");
     }
 }
