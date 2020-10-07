@@ -13,6 +13,13 @@
                 </a>
             </li>
             <li>
+                <a href="/routine" onclick="day()">
+                    <span class="rect"></span>
+                    <span class="circle"></span>
+                    Routine
+                </a>
+            </li>
+            <li>
                 <a href="/day" onclick="day()">
                     <span class="rect"></span>
                     <span class="circle"></span>

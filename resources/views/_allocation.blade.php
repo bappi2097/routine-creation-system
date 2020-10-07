@@ -1,4 +1,4 @@
-<table class="table-auto border border-gray-400 bg-white ml-12 page-content">
+<table class="table-auto border border-gray-400 bg-white">
     <thead>
         <tr>
             <th class="border border-gray-300 px-4 py-2">SL.</th>

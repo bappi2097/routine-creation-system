@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="mr-4 my-12 bg-white p-10 rounded-md page-content">
+<div class="mx-auto my-12 bg-white p-10 rounded-md">
     <div class="">
         <form action="{{route('dayStore')}}" method="post">
             @csrf

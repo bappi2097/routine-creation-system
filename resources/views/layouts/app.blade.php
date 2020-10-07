@@ -78,9 +78,11 @@
     @auth
     <x-sidebar></x-sidebar>
     @endauth
-    <main>
+    <main class="page-content">
         <x-flash></x-flash>
-        @yield('content')
+        <div>
+            @yield('content')
+        </div>
     </main>
     </div>
     <script src="{{asset('app.js')}}"></script>
