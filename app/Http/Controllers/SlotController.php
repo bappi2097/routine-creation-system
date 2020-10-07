@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Slot;
 use Illuminate\Http\Request;
 
@@ -13,13 +14,16 @@ class SlotController extends Controller
 
     public function store(Request $request)
     {
-        $input = $request->all();
-        if(Slot::updateOrCreate($input))
-        {
-            return redirect()->back()->with('success', 'Database Saved');
-        }else{
-            return redirect()->back()->with('error', 'Something error');
+        $this->validate($request, [
+            'title' => ['required', 'string', 'max:1'],
+            'start' => ['required', 'string'],
+            'end' => ['required', 'string'],
+        ]);
+
+        if (Slot::updateOrCreate(['title' => $request->title], ['start' => $request->start, 'end' => $request->end])) {
+            return redirect()->back()->with('success', 'Successfully slot saved');
+        } else {
+            return redirect()->back()->with('error', 'Something went wrong!');
         }
     }
-
 }

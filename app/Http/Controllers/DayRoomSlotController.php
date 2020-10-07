@@ -1,18 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\DaySlot;
+
+use App\Models\DayRoomSlot;
 use Illuminate\Http\Request;
 
-class DaySlotController extends Controller
+class DayRoomSlotController extends Controller
 {
     public function store(Request $request)
     {
         $input = $request->all();
-        if(DaySlot::updateOrCreate($input))
-        {
+        if (DayRoomSlot::updateOrCreate($input)) {
             return redirect()->back()->with('success', 'Database Saved');
-        }else{
+        } else {
             return redirect()->back()->with('error', 'Something error');
         }
     }

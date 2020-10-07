@@ -9,7 +9,7 @@
                     Teacher Name
                 </label>
 
-                <input class="border border-gray-400 p-2 w-full" type="text" name="teacher_name" id="teacher_name"
+                <input class="border border-gray-400 p-2 w-full" type="text" name="name" id="teacher_name"
                     placeholder="Enter Teacher Name" required>
                 @error('teacher_name')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDaySlotsTable extends Migration
+class CreateDayRoomSlotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateDaySlotsTable extends Migration
      */
     public function up()
     {
-        Schema::create('day_slots', function (Blueprint $table) {
+        Schema::create('day_room_slot', function (Blueprint $table) {
             $table->id();
             $table->text('free_days');
+            $table->text('room_no');
             $table->strine('start');
             $table->strine('end');
             $table->timestamps();

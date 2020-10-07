@@ -34,10 +34,12 @@ class ImportExcelController extends Controller
         $rows = array_slice($rows, 1);
         $datas = array();
         $cnt = 0;
+        $color = Color::pluck('_id')->all();
         foreach ($rows as $row) {
             $data = [];
             if ($row[0] != null) {
                 $data['semester'] = $row[$index['SEMESTER']];
+                $data['color_id'] = $color[$cnt];
                 $sections = array_filter(preg_split("/[\s,()]+/", $row[$index['SECTION']]));
                 $data['sections'] = array_slice($sections, 0, sizeof($sections) != 1 ? sizeof($sections) - 1 : 1);
                 $data['number_of_student'] = sizeof($sections) != 1 ? (int)$sections[sizeof($sections) - 1] : 0;
@@ -78,16 +80,7 @@ class ImportExcelController extends Controller
             }
         }
         Allocation::truncate();
-        $color = Color::pluck('_id')->all();
-        foreach ($datas as $index => $data) {
-            Allocation::create([
-                'semester' => $data['semester'],
-                'color_id' => $color[$index],
-                'sections' => $data['sections'],
-                'number_of_student' => $data['number_of_student'],
-                'courses' => $data['courses'],
-            ]);
-        }
+        Allocation::insert($datas);
         return redirect()->back()->with('success', "Allocation Successfully Uploaded");
     }
 }

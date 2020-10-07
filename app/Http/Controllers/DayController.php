@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Day;
 use Illuminate\Http\Request;
 
@@ -13,13 +14,12 @@ class DayController extends Controller
 
     public function store(Request $request)
     {
-        $input = $request->all();
-        if(Day::updateOrCreate($input))
-        {
-            return redirect()->back()->with('success', 'Database Saved');
-        }else{
-            return redirect()->back()->with('error', 'Something error');
+        $input = $request->days;
+        $day = new Day();
+        if ($day->store($input)) {
+            return redirect()->back()->with('success', 'Successfully Saved');
+        } else {
+            return redirect()->back()->with('error', 'Something went wrong!');
         }
     }
-
 }
