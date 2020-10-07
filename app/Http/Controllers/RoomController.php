@@ -14,7 +14,7 @@ class RoomController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        if(Room::create($input))
+        if(Room::updateOrCreate($input))
         {
             return redirect()->back()->with('success', 'Database Saved');
         }else{

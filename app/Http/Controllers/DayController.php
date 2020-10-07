@@ -14,7 +14,7 @@ class DayController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        if(Day::create($input))
+        if(Day::updateOrCreate($input))
         {
             return redirect()->back()->with('success', 'Database Saved');
         }else{

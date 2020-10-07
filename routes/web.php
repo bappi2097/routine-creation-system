@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ImportExcelController;
 use App\Http\Controllers\DayController;
+use App\Http\Controllers\DaySlotController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\RoutineController;
@@ -39,6 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/day', [DayController::class, 'store'])->name('dayStore');
     Route::get('/room', [RoomController::class, 'index']);
     Route::post('/room', [RoomController::class, 'store'])->name('roomStore');
+    Route::post('/datSlot', [DaySlotController::class, 'store'])->name('daySlotStore');
     Route::get('/slot', [SlotController::class, 'index']);
     Route::post('/slot', [SlotController::class, 'store'])->name('slotStore');
     Route::get('/teacher', [TeacherController::class, 'index']);

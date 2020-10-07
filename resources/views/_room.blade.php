@@ -35,7 +35,7 @@
 </div>  
 <div class="mx-auto my-12 bg-white p-10 rounded-md">
     <div class="container">  
-        <form action="{{route('dayTimeStore')}}" method="post">
+        <form action="{{route('daySlotStore')}}" method="post">
             @csrf        
             <div class="mb-6">
                 <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="free_days">Free Days</label>

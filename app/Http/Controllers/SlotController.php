@@ -14,7 +14,7 @@ class SlotController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        if(Slot::create($input))
+        if(Slot::updateOrCreate($input))
         {
             return redirect()->back()->with('success', 'Database Saved');
         }else{
