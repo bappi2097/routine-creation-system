@@ -17,7 +17,7 @@ class CreateTeachersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('initial')->unique();
-            $table->text('off_days');
+            $table->text('off_day');
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Day;
 use App\Models\DayRoomSlot;
+use App\Models\Room;
 use App\Models\Slot;
 use Illuminate\Http\Request;
 
@@ -32,11 +33,11 @@ class DayRoomSlotController extends Controller
         })->all();
 
         $days = $request->days ?: Day::pluck('day')->all();
-
         foreach ($slots as $slot) {
             foreach ($days as $day) {
                 DayRoomSlot::updateOrCreate([
                     'room' => $request->room,
+                    'room_type' => Room::where('number', $request->room)->pluck('type')->first(),
                     'day' => $day,
                     'slot' => $slot['title']
                 ], [

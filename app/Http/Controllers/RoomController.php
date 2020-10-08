@@ -22,7 +22,7 @@ class RoomController extends Controller
     {
         $this->validate($request, [
             'number' => ['required', 'string', 'max:8'],
-            'type' => ['required', 'string', 'max:8']
+            'type' => ['required', 'boolean']
         ]);
         if (Room::updateOrCreate(['number' => $request->number], ['type' => $request->type])) {
             return redirect()->back()->with('success', 'Database Saved');

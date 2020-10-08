@@ -16,7 +16,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             ColorSeeder::class,
+            DaySeeder::class,
+            SlotSeeder::class,
+            RoomSeeder::class,
+            TeacherSeeder::class,
         ]);
-        // \App\Models\User::factory(10)->create();
     }
 }

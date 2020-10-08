@@ -27,15 +27,11 @@
                 @enderror
             </div>
             <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="off_days">Off Days</label>
-                <select class="border border-gray-400 w-full" name="off_days[]" id="off_days" multiple required>
-                    <option class="py-2 px-4 border-b border-b-gray-300" value="Sataurday">Sataurday</option>
-                    <option class="py-2 px-4 border-b border-b-gray-300" value="Sunday">Sunday</option>
-                    <option class="py-2 px-4 border-b border-b-gray-300" value="Monday">Monday</option>
-                    <option class="py-2 px-4 border-b border-b-gray-300" value="Tuesday">Tuesday</option>
-                    <option class="py-2 px-4 border-b border-b-gray-300" value="Wednesday">Wednesday</option>
-                    <option class="py-2 px-4 border-b border-b-gray-300" value="Thrusday">Thrusday</option>
-                    <option class="py-2 px-4 border-b border-b-gray-300" value="Friday">Friday</option>
+                <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="off_day">Off Day</label>
+                <select class="border border-gray-400 p-2 w-full" name="off_day" id="off_day" required>
+                    @foreach ($days as $day)
+                    <option class="py-2 px-4 border-b border-b-gray-300" value="{{$day}}">{{$day}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="mb-6">

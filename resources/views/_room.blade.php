@@ -18,8 +18,8 @@
             <div class="mb-6">
                 <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="type">Room Type</label>
                 <select class="border border-gray-400 p-2 w-full" name="type" id="type" required>
-                    <option class="py-1 border-b border-b-gray-300" value="Theory">Theory</option>
-                    <option class="py-1 border-b border-b-gray-300" value="Lab">Lab</option>>
+                    <option class="py-1 border-b border-b-gray-300" value="1" selected>Theory</option>
+                    <option class="py-1 border-b border-b-gray-300" value="0">Lab</option>>
                 </select>
                 @error('type')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
@@ -45,7 +45,7 @@
                     <option class="border-b border-b-gray-300" selected> Choose Room </option>
                     @foreach ($rooms as $room)
                     <option class="border-b border-b-gray-300" value="{{$room->number}}">
-                        {{$room->number}}
+                        {{$room->number}}{{$room->type ? "" : " - Lab"}}
                     </option>
                     @endforeach
                 </select>

@@ -16,6 +16,7 @@ class CreateDayRoomSlotTable extends Migration
         Schema::create('day_room_slot', function (Blueprint $table) {
             $table->id();
             $table->text('room');
+            $table->boolean('room_type');
             $table->string('day');
             $table->string('slot');
             $table->time('start');
