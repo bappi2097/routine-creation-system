@@ -15,10 +15,11 @@ class CreateDayRoomSlotTable extends Migration
     {
         Schema::create('day_room_slot', function (Blueprint $table) {
             $table->id();
-            $table->text('free_days');
-            $table->text('room_no');
-            $table->strine('start');
-            $table->strine('end');
+            $table->text('room');
+            $table->string('day');
+            $table->string('slot');
+            $table->time('start');
+            $table->time('end');
             $table->timestamps();
         });
     }
