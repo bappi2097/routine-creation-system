@@ -4,7 +4,6 @@
     </div>
     <nav>
         <ul>
-            <h2 class="text-white text-xl">{{auth()->user()->name}}</h2>
             <li>
                 <a href="/home">
                     <span class="rect"></span>
@@ -47,17 +46,22 @@
                     Teacher
                 </a>
             </li>
-            <li>
-                <a href="{{ route('logout') }}"
-                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <span class="rect"></span>
-                    <span class="circle"></span>
-                    {{ __('Logout') }} </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                    @csrf
-                </form>
-            </li>
         </ul>
     </nav>
+</div>
+<div class="page-content mt-6 mr-6">
+    <ul class="flex float-right">
+        <li class="mr-2 text-bold rounded-full">
+            {{auth()->user()->name}}
+        </li>
+        <li>
+            <a class=" hover:text-blue-400" href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                {{ __('Logout') }} </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                @csrf
+            </form>
+        </li>
+    </ul>  
 </div>
