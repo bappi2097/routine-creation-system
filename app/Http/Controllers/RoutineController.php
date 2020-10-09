@@ -10,4 +10,14 @@ class RoutineController extends Controller
     {
         return view('_routine');
     }
+    public function generate()
+    {
+        dd(true);
+        return null;
+    }
+    public function store()
+    {
+        $this->generate();
+        return null;
+    }
 }

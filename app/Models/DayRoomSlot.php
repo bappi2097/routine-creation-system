@@ -9,5 +9,8 @@ use Jenssegers\Mongodb\Eloquent\Model;
 class DayRoomSlot extends Model
 {
     use HasFactory;
+
+    protected $collection = "day_room_slot";
+
     protected $guarded = [];
 }

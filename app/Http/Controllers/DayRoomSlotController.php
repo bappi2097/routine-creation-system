@@ -46,7 +46,6 @@ class DayRoomSlotController extends Controller
                 ]);
             }
         }
-
         return redirect()->back()->with('success', 'Database Saved');
     }
 }

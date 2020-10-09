@@ -55,15 +55,14 @@
             </div>
             <div class="flex">
                 <div class="mb-6 w-1/2 mr-8">
-                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="days">Free
-                        Days</label>
+                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="days">Days</label>
                     <select class="border border-gray-400 w-full" name="days[]" id="days" multiple>
                         @foreach ($days as $day)
                         <option class="py-2 px-4 border-b border-b-gray-300" value="{{$day->day}}">{{$day->day}}
                         </option>
                         @endforeach
                     </select>
-                    @error('free_days')
+                    @error('days')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                     @enderror
                 </div>

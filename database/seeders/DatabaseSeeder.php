@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             SlotSeeder::class,
             RoomSeeder::class,
             TeacherSeeder::class,
+            DayRoomSlotSeeder::class,
         ]);
     }
 }

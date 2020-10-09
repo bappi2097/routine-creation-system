@@ -18,15 +18,14 @@ class RoomSeeder extends Seeder
             'number' => '304AB',
             'type' => false
         ]);
-
         Room::create([
             'number' => '305AB',
             'type' => true
         ]);
-        Room::create([
-            'number' => '306AB',
-            'type' => true
-        ]);
+        // Room::create([
+        //     'number' => '306AB',
+        //     'type' => true
+        // ]);
         Room::create([
             'number' => '404AB',
             'type' => false
@@ -60,16 +59,20 @@ class RoomSeeder extends Seeder
             'type' => true
         ]);
         Room::create([
+            'number' => '605AB',
+            'type' => false
+        ]);
+        Room::create([
             'number' => '607AB',
             'type' => true
         ]);
-        Room::create([
-            'number' => '506MB',
-            'type' => false
-        ]);
-        Room::create([
-            'number' => '507MB',
-            'type' => false
-        ]);
+        // Room::create([
+        //     'number' => '506MB',
+        //     'type' => false
+        // ]);
+        // Room::create([
+        //     'number' => '507MB',
+        //     'type' => false
+        // ]);
     }
 }
