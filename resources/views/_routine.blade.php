@@ -12,7 +12,7 @@
     <thead>
         <tr>
             @foreach($slots as $slot)
-                <th colspan="4" class="border border-gray-300 text-xs px-4 py-2"> {{ $slot->start }}-{{ $slot->end }}</th>
+                <th colspan="4" class="border border-gray-300 text-xs px-4 py-2"> {{ date("g:i a", strtotime($slot->start)) }} - {{ date("g:i a", strtotime($slot->end)) }}</th>
             @endforeach
         </tr>
         <tr>
