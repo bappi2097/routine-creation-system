@@ -15,6 +15,8 @@ class CreateRoutinesTable extends Migration
     {
         Schema::create('routines', function (Blueprint $table) {
             $table->id();
+            $table->string('day');
+            $table->array('data');
             $table->timestamps();
         });
     }
