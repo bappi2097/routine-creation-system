@@ -5,7 +5,7 @@
     <nav>
         <ul>
             <li>
-                <a href="/home">
+                <a href="/">
                     <span class="rect"></span>
                     <span class="circle"></span>
                     Home

@@ -6,6 +6,7 @@ use App\Models\Allocation;
 use App\Models\DayRoomSlot;
 use App\Models\Routine;
 use App\Models\Teacher;
+use App\Models\Slot;
 
 // use Illuminate\Http\Request;
 
@@ -14,6 +15,7 @@ class RoutineController extends Controller
     public function index()
     {
         $routines = Routine::all();
+        $slots = Slot::all();
         $datas = [];
         foreach ($routines as $routine) {
             foreach ($routine->data as $index_slot => $slot) {
@@ -23,7 +25,8 @@ class RoutineController extends Controller
             }
         }
         return view('_routine', [
-            'routines' => $datas
+            'routines' => $datas,
+            'slots' => $slots,
         ]);
     }
 
