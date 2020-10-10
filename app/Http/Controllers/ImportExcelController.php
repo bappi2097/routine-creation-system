@@ -38,7 +38,10 @@ class ImportExcelController extends Controller
         foreach ($rows as $row) {
             $data = [];
             if ($row[0] != null) {
-                $data['semester'] = $row[$index['SEMESTER']];
+                $semester = preg_split("/[()]+/", $row[$index['SEMESTER']]);
+                $lnt = sizeof($semester);
+                $data['semester'] = $semester[0];
+                $data['term_level'] = $lnt > 1 ? $semester[1] : "Null";
                 $data['color_id'] = $color[$cnt];
                 $sections = array_filter(preg_split("/[\s,()]+/", $row[$index['SECTION']]));
                 $data['sections'] = array_slice($sections, 0, sizeof($sections) != 1 ? sizeof($sections) - 1 : 1);

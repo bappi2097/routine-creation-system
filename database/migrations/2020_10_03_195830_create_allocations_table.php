@@ -16,6 +16,7 @@ class CreateAllocationsTable extends Migration
         Schema::create('allocations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('color_id');
+            $table->string('term_level');
             $table->string('semester');
             $table->text('section');
             $table->integer('number_of_student');

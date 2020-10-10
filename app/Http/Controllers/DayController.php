@@ -14,8 +14,16 @@ class DayController extends Controller
 
     public function store(Request $request)
     {
-        $input = $request->days;
+        $this->validate($request, [
+            'days' => ['required', 'array']
+        ]);
+
+        $input = [
+            'days' => $request->days
+        ];
+
         $day = new Day();
+
         if ($day->store($input)) {
             return redirect()->back()->with('success', 'Successfully Saved');
         } else {

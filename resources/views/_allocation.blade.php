@@ -2,6 +2,7 @@
     <thead>
         <tr>
             <th class="border border-gray-300 px-4 py-2">SL.</th>
+            <th class="border border-gray-300 px-4 py-2">Term</th>
             <th class="border border-gray-300 px-4 py-2">Semester</th>
             <th class="border border-gray-300 px-4 py-2">Section</th>
             <th class="border border-gray-300 px-4 py-2">Students</th>
@@ -23,6 +24,9 @@
             @if ($course_index==0)
             <td class="border px-4 py-2" rowspan="{{count($routine->courses)}}">
                 {{ $index+1}}
+            </td>
+            <td class="border px-4 py-2" rowspan="{{count($routine->courses)}}">
+                {{ $routine->term_level}}
             </td>
             <td class="border px-4 py-2" rowspan="{{count($routine->courses)}}">
                 {{ $routine->semester}}
