@@ -40,8 +40,8 @@ class ImportExcelController extends Controller
             if ($row[0] != null) {
                 $semester = preg_split("/[()]+/", $row[$index['SEMESTER']]);
                 $lnt = sizeof($semester);
-                $data['semester'] = $semester[0];
-                $data['term_level'] = $lnt > 1 ? $semester[1] : "Null";
+                $data['term_level'] = $semester[0];
+                $data['semester'] = $lnt > 1 ? $semester[1] : "Null";
                 $data['color_id'] = $color[$cnt];
                 $sections = array_filter(preg_split("/[\s,()]+/", $row[$index['SECTION']]));
                 $data['sections'] = array_slice($sections, 0, sizeof($sections) != 1 ? sizeof($sections) - 1 : 1);
@@ -55,10 +55,29 @@ class ImportExcelController extends Controller
                         ];
                     }
                 }
+                if ($row[$index['CRE']] == 4) {
+                    $data = [
+                        'credit' => 1,
+                        'code' => $row[$index['CODE']],
+                        'name' => preg_split("/[()]+/", $row[$index['COURSE NAME']])[0],
+                        'teachers' => $teachers
+                    ];
+                    $datas[] = $data;
+                    $cnt++;
+                    $row[$index['CRE']] -= 1;
+                    $data['courses'][] = [
+                        'credit' => $row[$index['CRE']],
+                        'code' => $row[$index['CODE']],
+                        'name' => preg_split("/with Lab+/", preg_split("/[()]+/", $row[$index['COURSE NAME']])[0])[0],
+                        'teachers' => $teachers
+                    ];
+                    $datas[$cnt - 1]['courses'][] = $data;
+                    continue;
+                }
                 $data['courses'][] = [
                     'credit' => $row[$index['CRE']],
                     'code' => $row[$index['CODE']],
-                    'name' => $row[$index['COURSE NAME']],
+                    'name' => preg_split("/[()]+/", $row[$index['COURSE NAME']])[0],
                     'teachers' => $teachers
                 ];
                 $datas[] = $data;
@@ -73,10 +92,20 @@ class ImportExcelController extends Controller
                         ];
                     }
                 }
+                if ($row[$index['CRE']] == 4) {
+                    $data = [
+                        'credit' => 1,
+                        'code' => $row[$index['CODE']],
+                        'name' => preg_split("/[()]+/", $row[$index['COURSE NAME']])[0],
+                        'teachers' => $teachers
+                    ];
+                    $datas[$cnt - 1]['courses'][] = $data;
+                    $row[$index['CRE']] -= 1;
+                }
                 $data = [
                     'credit' => $row[$index['CRE']],
                     'code' => $row[$index['CODE']],
-                    'name' => $row[$index['COURSE NAME']],
+                    'name' => preg_split("/with Lab+/", preg_split("/[()]+/", $row[$index['COURSE NAME']])[0])[0],
                     'teachers' => $teachers
                 ];
                 $datas[$cnt - 1]['courses'][] = $data;

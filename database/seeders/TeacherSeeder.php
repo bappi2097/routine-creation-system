@@ -172,5 +172,32 @@ class TeacherSeeder extends Seeder
             'initial' => 'RY',
             'off_day' => "Saturday"
         ]);
+
+        Teacher::create([
+            'name' => 'Mr. Sayed Farrukh Ahmed',
+            'initial' => 'AB',
+            'off_day' => "Sunday"
+        ]);
+        Teacher::create([
+            'name' => 'Mr. Arif Hassan',
+            'initial' => 'FS',
+            'off_day' => "Monday"
+        ]);
+        Teacher::create([
+            'name' => 'Mr. Shakil Ahmed',
+            'initial' => 'AE',
+            'off_day' => "Tuesday"
+        ]);
+        Teacher::create([
+            'name' => 'Ridwanullah Yousuf',
+            'initial' => 'TBA',
+            'off_day' => "Wednesday"
+        ]);
+
+        Teacher::create([
+            'name' => 'Ridwanullah Yousuf',
+            'initial' => 'RR',
+            'off_day' => "Thursday"
+        ]);
     }
 }
