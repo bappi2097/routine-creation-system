@@ -8,6 +8,7 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\RoutineController;
 use App\Http\Controllers\SlotController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\ExcelExportController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,8 +18,10 @@ Auth::routes();
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
-    ROute::get('/routine', [RoutineController::class, 'index'])->name('routine');
-    ROute::post('/routine', [RoutineController::class, 'store'])->name('routine-store');
+    Route::get('/routine', [RoutineController::class, 'index'])->name('routine');
+    Route::post('/routine', [RoutineController::class, 'store'])->name('routine-store');
+    Route::get('/routine/export', [ExcelExportController::class, 'exportRoutineExcel'])->name('routine-export');
+    Route::get('/routine/excel', [RoutineController::class, 'generateExcel']);
     Route::post('/allocation', [ImportExcelController::class, 'store'])->name('store');
     Route::get('/day', [DayController::class, 'index']);
     Route::post('/day', [DayController::class, 'store'])->name('dayStore');
