@@ -117,6 +117,9 @@ class RoutineController extends Controller
         if($index_room != "304AB" &&$cells[$index_day][$index_slot][$index_room]["course_code"] == "SE 233"){
             return false;
         }
+        if($index_room != "405AB" &&$cells[$index_day][$index_slot][$index_room]["course_code"] == "SWE313"){
+            return false;
+        }
         return true;
     }
 
