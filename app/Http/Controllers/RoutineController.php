@@ -72,11 +72,13 @@ class RoutineController extends Controller
                 }
             }
         }
+        // dd("hello");
         return $cells;
     }
 
     public function condition($cells, $courses, $index_day, $index_slot, $index_room, $course)
     {
+        // dd($index_room);
         if (!empty($cells[$index_day][$index_slot][$index_room]['section'])) {
             return false;
         }
@@ -93,6 +95,27 @@ class RoutineController extends Controller
             if ($room["teacher"] == $course["teacher"]) {
                 return false;
             }
+        }
+        // dd($cells[$index_day][$index_room]);
+        // dd(count($cells[$index_day]));
+        $c = 0;
+        $t = 0;
+        foreach($cells[$index_day] as $class){
+            if($class[$index_room]["semester"] == $course["semester"] && $class[$index_room]["section"] == $course["section"]){
+                if($c>4){
+                    return false;
+                }
+                $c++;
+            }
+            if($class[$index_room]["teacher"] == $course["teacher"]){
+                if($t>4){
+                    return false;
+                }
+                $t++;
+            }
+        }
+        if($index_room != "304AB" &&$cells[$index_day][$index_slot][$index_room]["course_code"] == "SE 233"){
+            return false;
         }
         return true;
     }
